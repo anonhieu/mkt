@@ -355,13 +355,13 @@
         }
 
         makeTimer();
-    </script>
-    <script>
-        var d = new Date();
-        let day = d.getDate();
-        let thang = d.getMonth();
-        let nam = d.getFullYear();
-        document.getElementById("ngaykm").innerHTML = day + "/" + thang + "/" + nam;
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+        
+        today = dd + '/' + mm + '/' + yyyy;
+        $("#ngaykm").html(today);
     </script>
     <script>
         const toggleButton = document.querySelector('.dark-light');
